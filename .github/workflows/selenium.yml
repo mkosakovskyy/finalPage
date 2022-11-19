@@ -38,14 +38,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-
-      - name: Generate artifact for ExtentReports Spark HTML
-        uses: actions/upload-artifact@v3
-        if: ${{ github.event.inputs.extent == 'true' }}
-        with:
-          name: report_html
-          path: ./extent-reports/spark
-
       - name: Generate artifact for Allure Reports
         uses: actions/upload-artifact@v3
         if: ${{ github.event.inputs.allure == 'true' }}
@@ -64,11 +56,9 @@ jobs:
           name: report_allure
           path: ./allure-results
 
-      - name: Download Artifact 2
-        uses: actions/download-artifact@v3
-        with:
-          name: report_html
-          path: ./extent-spark
+      - uses: sudo apt-get install tree
+      - uses: cd
+      - uses: ls -l
 
 
 
@@ -79,6 +69,11 @@ jobs:
         with:
           ref: gh-pages
           path: ./reports/chrome-desktop/allure
+
+
+      - uses: sudo apt-get install tree
+      - uses: cd
+      - uses: ls -l
 
       - name: Get AllureReports results
         uses: simple-elf/allure-report-action@master
@@ -91,6 +86,10 @@ jobs:
           allure_history: ./reports/chrome-desktop/allure/allure-history
           keep_reports: 10
 
+      - uses: sudo apt-get install tree
+      - uses: cd
+      - uses: ls -l
+
       - name: Prepare AllureReports deploy to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2
@@ -98,3 +97,7 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./reports/chrome-desktop/allure/allure-history
+
+      - uses: sudo apt-get install tree
+      - uses: cd
+      - uses: ls -l
