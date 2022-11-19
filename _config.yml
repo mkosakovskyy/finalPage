@@ -1,15 +1,10 @@
 # Setup
-title:        Project or Site name
-tagline:      A responsive theme for your project on GitHub Pages
+title: hiberus
+tagline: DIARIO AS - DIGITAL
 baseurl: "/finalPage"
 url: "https://mkosakovskyy.github.io"
-paginate:     1
-locale:       "en"
-
-# About/contact
-author:
-  name:       Author name
-  url:        http://yourhomepage.com 
+paginate: 1
+locale: "es"
 
 # Gems
 gems:

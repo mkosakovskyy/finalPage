@@ -2,12 +2,35 @@
 layout: default
 title: {{ site.name }}
 ---
+<head>
+  <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+</head>
+<body>
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
+<h1 class="page-title">Resultados de CHROME - DESKTOP</h1>
+<div class="wrapper">
+  <ul class="listing">
+    <li class="container1 main-container">
+      <img class="logo-app main-logo" src="images/logo-allure.png">
+      <h2 class="container-title main-title">Allure Reports</h2>
+      <p class="container-text main-text">Reporte web completo que exprime al máximo los resultados. Nos brinda trazabilidad de ejecuciones, gráficos, filtro de defectos, etc.  </p>
+    </li>
+    <li class="container2">
+      <img class="logo-app" src="images/logo-extent.png">
+      <h2 class="container-title">Spark</h2>
+      <p class="container-text">Descargar archivo html compacto y ligero de Extent Reports.</p>
+    </li>
+    <li class="container3">
+      <img class="logo-app" src="images/logo-pdf.png">
+      <h2 class="container-title">PDF</h2>
+      <p class="container-text">Descargar documento pdf con los resultados de Extent Reports.</p>
+    </li>
+    <li class="container4">
+      <img class="logo-app" src="images/logo-video.png">
+      <h2 class="container-title">Grabación</h2>
+      <p class="container-text">Descargar videos avi de las ultimas ejecuciones.</p>
+    </li>
   </ul>
+  <br>
 </div>
+</body>
