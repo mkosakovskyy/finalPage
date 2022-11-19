@@ -56,9 +56,9 @@ jobs:
           name: report_allure
           path: ./allure-results
 
-      - uses: sudo apt-get install tree
-      - uses: cd
-      - uses: ls -l
+      - run: sudo apt-get install tree
+      - run: cd
+      - run: ls -l
 
 
 
@@ -71,9 +71,9 @@ jobs:
           path: ./reports/chrome-desktop/allure
 
 
-      - uses: sudo apt-get install tree
-      - uses: cd
-      - uses: ls -l
+      - run: sudo apt-get install tree
+      - run: cd
+      - run: ls -l
 
       - name: Get AllureReports results
         uses: simple-elf/allure-report-action@master
@@ -86,9 +86,9 @@ jobs:
           allure_history: ./reports/chrome-desktop/allure/allure-history
           keep_reports: 10
 
-      - uses: sudo apt-get install tree
-      - uses: cd
-      - uses: ls -l
+      - run: sudo apt-get install tree
+      - run: cd
+      - run: ls -l
 
       - name: Prepare AllureReports deploy to Github Pages
         if: always()
@@ -98,6 +98,6 @@ jobs:
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./reports/chrome-desktop/allure/allure-history
 
-      - uses: sudo apt-get install tree
-      - uses: cd
-      - uses: ls -l
+      - run: sudo apt-get install tree
+      - run: cd
+      - run: ls -l
