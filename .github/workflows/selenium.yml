@@ -68,7 +68,8 @@ jobs:
         continue-on-error: true
         with:
           ref: gh-pages
-          path: ./reports/chrome-desktop/allure
+          path: gh-pages
+          # path: ./reports/chrome-desktop/allure
 
 
       - run: cd
