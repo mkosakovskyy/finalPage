@@ -279,7 +279,6 @@ a:hover { text-decoration: underline; }
   background-color: #FFC75F;
 }
 .wrapper {
-
   height: auto;
   margin: 0 60px;
 }
@@ -344,4 +343,33 @@ a:hover { text-decoration: underline; }
       "c1 c2"
       "c3 c4"
   }
+}
+@media (max-width: 670px) {
+  .logo-app {
+    width: auto;
+    height: 50px;
+    margin: 10px 4px;
+  }
+  .wrapper {
+    margin: 0 45px;
+  }
+  .listing .container-title {
+    margin: 5px auto 0;
+  }
+}
+.error404titulo {
+  font-size: 120px;
+  text-align: center;
+  color: #173962  !important;
+  font-weight: bold !important;
+  line-height: 0.8;
+  margin-top: 60px !important;
+}
+.error404texto {
+  font-size: 30px;
+  text-align: center;
+  color: #173962  !important;
+  font-weight: bold !important;
+  line-height: 1;
+  margin-bottom: 160px !important;
 }
