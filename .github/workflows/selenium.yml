@@ -12,7 +12,6 @@ on:
         options:
           - chrome
           - safari
-          - firefox
       platform:
         type: choice
         description: Elige la plataforma
@@ -43,7 +42,7 @@ jobs:
 
       - name: Generate artifact for Allure Reports
         uses: actions/upload-artifact@v3
-        if: ${{ github.event.inputs.allure == 'true' }}
+        if: always()
         with:
           name: report_allure
           path: ./allure-results
