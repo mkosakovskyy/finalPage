@@ -13,10 +13,13 @@ on:
           - chrome
           - safari
           - firefox
-      allure:
-        type: boolean
-        description: Publicar en Allure
-        default: true
+      platform:
+        type: choice
+        description: Elige la plataforma
+        required: true
+        options:
+          - desktop
+          - mobile
       extent:
         type: boolean
         description: Generar reporte Extent
@@ -47,7 +50,7 @@ jobs:
 
   allure:
     needs: selenium
-    if: ${{ github.event.inputs.allure == 'true' }}
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact
@@ -74,7 +77,7 @@ jobs:
           allure_report: allure-report
           allure_history: allure-history
           keep_reports: 10
-          subfolder: reports/chrome-desktop/allure
+          subfolder: reports/${{ github.event.inputs.browser }}-${{ github.event.inputs.platform }}/allure
 
       - name: Prepare AllureReports deploy to Github Pages
         if: always()
